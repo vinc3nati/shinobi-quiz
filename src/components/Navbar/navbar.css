@@ -1,0 +1,14 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  
+  
+  
+  @media only screen and (max-width: 768px) {
+    .navbar .main {
+      flex-wrap: wrap;
+    }
+  }
+  

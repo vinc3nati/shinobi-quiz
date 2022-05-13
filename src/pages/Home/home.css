@@ -1,0 +1,35 @@
+.home {
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    background-image:  linear-gradient(45deg, rgba(145, 146, 122, 0.62), rgb(145, 146, 122, 0.4)),url("/src/assets/hero_4.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content {
+    padding: 2rem 3.5rem;
+    text-align: center;
+    font-size: 2rem;
+    background-color: rgba(145, 146, 122, 0.6);
+    border-radius: var(--border-radius-3);
+}
+
+.home-content .btn {
+    font-size: 2rem;
+}
+
+.home-heading {
+    font-size: 6rem;
+    font-weight: 700;   
+    color: var(--color-primary);
+}
+
+.home-content > *:not(:last-child) {
+    margin-bottom: 1rem;
+}
