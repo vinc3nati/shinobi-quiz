@@ -3,6 +3,16 @@
     top: 0;
     left: 0;
   }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-icon {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
   
   
   
