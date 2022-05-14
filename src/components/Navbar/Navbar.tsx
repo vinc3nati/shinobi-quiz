@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import {AiFillTrophy} from 'react-icons/ai'
+import { AiFillTrophy } from "react-icons/ai";
+import { FaFlipboard } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import { Account } from "../Account/Account";
 import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
@@ -14,11 +15,12 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="nav-links">
-        <AiFillTrophy className="nav-icon" />
-        <ThemeSwitcher />
+          <FaFlipboard title="Dashboard" className="nav-icon" />
+          <AiFillTrophy title="Leader board" className="nav-icon" />
+          <ThemeSwitcher />
         </div>
         <Account />
       </div>
     </nav>
-  )
-}
+  );
+};
