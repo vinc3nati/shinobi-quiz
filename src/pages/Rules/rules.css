@@ -1,0 +1,40 @@
+#rules {
+    min-height: 100vh;
+    padding: 2rem 2.5rem;
+}
+
+.rules-container {
+    margin: 2rem auto 0;
+    max-width: 55rem;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2.5rem 1rem;
+    border: 1px solid var(--color-foreground);
+    border-radius: var(--border-radius-3);
+}
+
+.rule-list {
+    list-style: none;
+}
+
+.rule-list > * {
+    margin-bottom: 1.5rem;
+}
+.rule-item {
+    font-size: 2.25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.rule-icon {
+    color: var(--color-warning)
+}
+
+/* @media only screen and (max-width: 768px) {
+    
+} */

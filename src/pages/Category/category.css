@@ -1,0 +1,32 @@
+#category {
+    min-height: 100vh;
+    padding: 2rem 2.5rem;
+}
+
+.category-btn-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.category-btn {
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-foreground);
+    border-radius: 20px;
+}
+
+.category-btn.active {
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+}
+
+.category-card-container {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}

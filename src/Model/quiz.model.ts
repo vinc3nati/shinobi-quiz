@@ -4,7 +4,7 @@ export const QuizModel: QuizModelType[] = [
     {
         quizName: 'Devil Fruits',
         quizId: '71850543-9797-4093-bc63-1e6b26df5d26',
-        image: 'https://res.cloudinary.com/randomwave45/image/upload/v1650022195/one_piece_2_jcjkvz.jpg',
+        image: 'https://res.cloudinary.com/randomwave45/image/upload/v1652634504/c81786f0-4dfc-4131-8d60-9df175368423_zf6mk3.jpg',
         quizCategory: 'easy',
         points: 10,
         questions: [
@@ -115,7 +115,7 @@ export const QuizModel: QuizModelType[] = [
     {
         quizName: 'Kages',
         quizId: '85c493d3-04c1-43c1-827f-e6b9286b14e3',
-        image: 'https://res.cloudinary.com/randomwave45/image/upload/v1652600264/kage_agd2yv.jpg',
+        image: 'https://res.cloudinary.com/randomwave45/image/upload/v1652634423/78abefed-7c35-4b4f-a78b-2592bc5629c1_lavymo.jpg',
         quizCategory: 'easy',
         points: 10,
         questions: [
@@ -352,8 +352,8 @@ export const QuizModel: QuizModelType[] = [
     },
     {
         quizName: 'Nicknames',
-        quizId: 'dab835f0-6241-4985-9cc0-de38d491ee29',
-        image: 'https://res.cloudinary.com/randomwave45/image/upload/v1650009611/uchicha_crest_ngetfr.jpg',
+        quizId: 'dab835f0-6241-4985-9cc0-de38d491bb50',
+        image: 'https://res.cloudinary.com/randomwave45/image/upload/v1652634672/df35b83d-4fd6-49b0-bfea-b4bd3c7f910c_ijstzh.jpg',
         quizCategory: 'medium',
         points: 20,
         questions: [
@@ -472,7 +472,7 @@ export const QuizModel: QuizModelType[] = [
     {
         quizName: 'Visual Prowess',
         quizId: '2b088b84-a6b3-4cbe-8b59-dc8c0a9f037f',
-        image: 'https://res.cloudinary.com/randomwave45/image/upload/v1650009611/rinnegan_2_w9ytuk.jpg',
+        image: 'https://res.cloudinary.com/randomwave45/image/upload/v1652634584/83960158-ef07-4df5-b4bc-3f0a64d459b6_ut5ggt.jpg',
         quizCategory: 'hard',
         points: 30,
         questions: [
