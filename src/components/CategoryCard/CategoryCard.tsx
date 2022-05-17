@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { QuizModelType } from "../../types/quiz.types";
 
 export const CategoryCard = ({ data }: { data: QuizModelType }) => {
-  console.log("Card :", data);
   const { image, quizId, quizName } = data;
   const { pathname } = useLocation();
   return (
