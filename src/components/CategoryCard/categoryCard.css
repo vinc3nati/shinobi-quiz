@@ -1,0 +1,31 @@
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    height: 350px;
+    gap: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 20%);
+    border-radius: var(--border-radius-3);
+}
+
+.category-card-img-container {
+    width: 250px;
+    border-radius: inherit;
+}
+
+
+.category-card-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-card-content .btn {
+    width: 100%;
+    text-align: center;
+}
