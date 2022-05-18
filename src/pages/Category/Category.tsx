@@ -4,6 +4,7 @@ import { useData } from "../../contexts";
 import { useDocumentTitle } from "../../hooks";
 import { QuizModel } from "../../Model/quiz.model";
 import { TitleType } from "../../types";
+import { QUIZ_ANSWERS, QUIZ_TIMER } from "../../utils/constants";
 
 export const Category = ({ title }: TitleType) => {
   useDocumentTitle(title);
@@ -22,9 +23,11 @@ export const Category = ({ title }: TitleType) => {
     [] as string[]
   );
 
-  //   useEffect(() => {
-  //     dispatch({ type: "RESET" });
-  //   }, []);
+  useEffect(() => {
+    sessionStorage.removeItem(QUIZ_TIMER);
+    dispatch({ type: "RESET" });
+    sessionStorage.removeItem(QUIZ_ANSWERS);
+  }, []);
 
   return (
     <section id="category">
@@ -43,11 +46,9 @@ export const Category = ({ title }: TitleType) => {
         ))}
       </div>
       <div className="category-card-container">
-        {QuizModel.filter((item) => item.quizCategory === activeCategory)?.map(
-          (item) => (
-            <CategoryCard key={item.quizId} data={item} />
-          )
-        )}
+        {quizCategoryData?.map((item) => (
+          <CategoryCard key={item.quizId} data={item} />
+        ))}
       </div>
     </section>
   );

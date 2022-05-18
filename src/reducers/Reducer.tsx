@@ -24,5 +24,8 @@ export const Reducer = (
 
     case "RESET":
       return { ...state, answers: [] };
+
+    default:
+      return state;
   }
 };

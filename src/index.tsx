@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
-import { AuthProvider, ThemeProvider } from "./contexts";
+import { AuthProvider, DataProvider, ThemeProvider } from "./contexts";
 import { LoaderProvider } from "./contexts/loader-context";
 import ScrollToTop from "./ScrollToTop";
 
@@ -15,8 +15,10 @@ root.render(
       <ThemeProvider>
         <LoaderProvider>
           <AuthProvider>
-            <ScrollToTop />
-            <App />
+            <DataProvider>
+              <ScrollToTop />
+              <App />
+            </DataProvider>
           </AuthProvider>
         </LoaderProvider>
       </ThemeProvider>

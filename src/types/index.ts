@@ -5,3 +5,5 @@ export { LoaderContextType } from './loader-context.types';
 export { ToastType } from './toast.types'
 export { DataContextType, DataStateType, Dispatch, QuestionDataType, DataProviderProp } from './data-context.types'
 export {ActionType} from "./reducer.types"
+export {scoreType} from "./score.types"
+export {leaderboardUserType} from "./leaderboard.types"

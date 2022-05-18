@@ -1,0 +1,35 @@
+#leaderboard {
+    padding: 2rem 0;
+}
+
+.leaderboard-table {
+    border-collapse: collapse;
+    margin: 2rem auto 0;
+    max-width: 600px;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .leaderboard-row {
+      padding: 5px;
+  }
+
+  .leaderboard-row:nth-child(2n) {
+    background-color: var(--color-background-accent);
+    border-radius: var(--border-radius-3);
+  }
+  
+  .leaderboard-header-cell,
+  .leaderboard-table-cell {
+    padding: 1rem;
+    text-align: center;
+  }
+
+ .leaderboard-table thead {
+      background-color: var(--color-primary-accent);
+}
+  
+  .leaderboard-header-cell {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }

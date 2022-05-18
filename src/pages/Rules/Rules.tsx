@@ -39,7 +39,7 @@ export const Rules = ({ title }: TitleType) => {
           </button>
           <button
             className="btn primary"
-            onClick={() => navigate(`/${quizId}/1`)}
+            onClick={() => navigate(`/${quizId}/1`, { replace: true })}
           >
             Start
           </button>
