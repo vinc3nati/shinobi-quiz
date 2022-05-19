@@ -1,0 +1,108 @@
+#question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.question-heading {
+    font-size: 3rem;
+    color: var(--color-warning);
+    font-weight: 700;
+    text-transform: uppercase;
+    word-spacing: 2px;
+}
+
+.question-sub-heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.question-qt {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.question-answers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.question-answer-btn {
+    outline: none;
+    border: none;
+    padding: 1.5rem 2rem;
+    font-size: 1.8rem;
+    color: var(--color-foreground);
+    cursor: pointer;
+    background-color: var(--color-primary-accent);
+    border-radius: var(--border-radius-3);
+    transition: background-color 0.3s;
+}
+
+.question-answer-btn.active {
+    color: var(--color-tertiary);
+    background-color: var(--color-primary);
+}
+
+.question-answer-btn:not(.active):hover {
+    color: var(--color-tertiary);
+    background-color: var(--color-primary);
+}
+
+.question-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quit-link, .next-link  {
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--border-radius-3);
+    border: 1px solid var(--color-background-accent);
+    transition: background-color 0.3s;
+}
+
+.quit-link {
+    color: var(--color-error);
+}
+
+.quit-link:hover {
+    background-color: var(--color-background-accent);
+}
+
+.next-link {
+    color: var(--color-success);
+}
+
+.next-link:hover {
+    color: var(--color-tertiary);
+    background-color: var(--color-success);
+}
+
+@media only screen and (max-width: 600px) {
+    .question-container {
+        padding: 1rem 1.5rem;
+    }
+}

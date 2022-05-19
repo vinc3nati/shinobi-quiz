@@ -3,6 +3,10 @@
 @import url("./pages/Profile/profile.css");
 @import url("./pages/Category/category.css");
 @import url("./pages/Rules/rules.css");
+@import url("./pages/Questions/question.css");
+@import url("./pages/Result/result.css");
+@import url("./pages/LeaderBoard/leaderBoard.css");
+@import url("./pages/Dashboard/dashboard.css");
 @import url("./components/Navbar/navbar.css");
 @import url("./components/ThemeSwitcher/themeSwitcher.css");
 @import url("./components/Account/account.css");
@@ -69,6 +73,10 @@
   
   .text-warning {
     color: var(--color-warning);
+  }
+
+  .text-success {
+    color: var(--color-success);
   }
   
   /* Scrollbar */

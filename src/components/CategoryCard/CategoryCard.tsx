@@ -10,13 +10,13 @@ export const CategoryCard = ({ data }: { data: QuizModelType }) => {
         <img src={image} className="img img-responsive" alt="quiz poster" />
       </div>
       <div className="category-card-content">
-        <h5>{quizName.toUpperCase()}</h5>
+        <h5>{quizName}</h5>
         <Link
           to={`/${quizId}/rules`}
           state={{ from: pathname }}
           className="btn outline-primary"
         >
-          play
+          play now
         </Link>
       </div>
     </div>

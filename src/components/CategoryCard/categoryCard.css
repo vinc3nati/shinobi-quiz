@@ -25,6 +25,11 @@
     align-items: center;
 }
 
+.category-card-content h5 {
+    text-transform: uppercase;
+    word-spacing: 2px;
+}
+
 .category-card-content .btn {
     width: 100%;
     text-align: center;

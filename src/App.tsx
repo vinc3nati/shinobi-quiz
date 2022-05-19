@@ -1,11 +1,20 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { Footer, Loader, Navbar, ScrollTop } from "./components";
-import "./App.css";
+import { Footer, Loader, Navbar, PrivateRoute, ScrollTop } from "./components";
 import { useLoader } from "./contexts";
-import { Category, Home, Login, Profile, Signup } from "./pages";
-import { Rules } from "./pages/Rules/Rules";
-import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
+import {
+  Category,
+  Dashboard,
+  Home,
+  LeaderBoard,
+  Login,
+  Profile,
+  Questions,
+  Result,
+  Rules,
+  Signup,
+} from "./pages";
+import "./App.css";
 
 function App() {
   const { showLoader } = useLoader();
@@ -13,13 +22,17 @@ function App() {
   return (
     <>
       {showLoader && <Loader />}
-      {pathname !== "/login" && pathname !== "/signup" && <Navbar />}
+      {(pathname === "/" ||
+        pathname === "/profile" ||
+        pathname === "/category" ||
+        pathname === "/leaderboard" ||
+        pathname === "/dashboard") && <Navbar />}
       <Routes>
         <Route path="/" element={<Home title="home" />} />
         <Route path="/login" element={<Login title="login" />} />
         <Route path="/signup" element={<Signup title="signup" />} />
         <Route path="/profile" element={<Profile title="profile" />} />
-        <Route path="/category" element={<Category title="profile" />} />
+        <Route path="/category" element={<Category title="category" />} />
         <Route path="/:quizId">
           <Route
             path="rules"
@@ -29,7 +42,35 @@ function App() {
               </PrivateRoute>
             }
           />
+          <Route
+            path=":questionIdx"
+            element={
+              <PrivateRoute>
+                <Questions title="questions" />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="result"
+            element={
+              <PrivateRoute>
+                <Result title="result" />
+              </PrivateRoute>
+            }
+          />
         </Route>
+        <Route
+          path="/leaderboard"
+          element={<LeaderBoard title="leader board" />}
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard title="dashboard" />
+            </PrivateRoute>
+          }
+        />
       </Routes>
       <ToastContainer style={{ fontWeight: "500", fontSize: "2rem" }} />
       <ScrollTop />
