@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { BiTimeFive } from "react-icons/bi";
 import { useData } from "../../contexts";
 import { useDocumentTitle } from "../../hooks";
@@ -71,6 +71,10 @@ export const Questions = ({ title }: TitleType) => {
   }, [questionTimer]);
 
   useEffect(() => {
+    if (Number(questionIdx) > questions!?.length) {
+      navigate("/error");
+      return;
+    }
     if (answers.length === 0 && Number(questionIdx) !== 1) {
       const recoveredAnswers = JSON.parse(
         sessionStorage.getItem(QUIZ_ANSWERS) || "[]"
@@ -87,64 +91,70 @@ export const Questions = ({ title }: TitleType) => {
   }, []);
 
   return (
-    <section id="question">
-      <div className="question-container">
-        <header className="question-heading">{quizData?.quizName}</header>
-        <div className="question-sub-heading">
-          <p>
-            Question: {questionIdx} / {questions?.length}
-          </p>
-          <p
-            className={`timer ${
-              questionTimer < 10 ? "text-error" : "text-success"
-            }`}
-          >
-            <BiTimeFive />
-            <span>{questionTimer} sec</span>
-          </p>
-        </div>
-        <p className="question-qt">{activeQuestion.question}</p>
-        <div className="question-answers">
-          {activeQuestion.options.map((item, index) => (
-            <button
-              className={`question-answer-btn ${
-                answerBtn === index ? "active" : ""
-              }`}
-              key={item.value}
-              onClick={() => setAnswerBtn(index)}
-            >
-              {item.value}
-            </button>
-          ))}
-        </div>
-        <div className="question-footer">
-          <div
-            className="quit-link"
-            onClick={() => {
-              setQuestionTimer(60);
-              sessionStorage.removeItem(QUIZ_TIMER);
-              navigate("/category", { replace: true });
-            }}
-          >
-            Quit
+    <>
+      {!quizData && <Navigate to="/error" replace />}
+      {quizData && (
+        <section id="question">
+          <div className="question-container">
+            <header className="question-heading">{quizData?.quizName}</header>
+            <div className="question-sub-heading">
+              <p>
+                Question: {questionIdx} / {questions?.length}
+              </p>
+              <p
+                className={`timer ${
+                  questionTimer < 10 ? "text-error" : "text-success"
+                }`}
+              >
+                <BiTimeFive />
+                <span>{questionTimer} sec</span>
+              </p>
+            </div>
+            <p className="question-qt">{activeQuestion.question}</p>
+            <div className="question-answers">
+              {Object.keys(activeQuestion).length !== 0 &&
+                activeQuestion.options.map((item, index) => (
+                  <button
+                    className={`question-answer-btn ${
+                      answerBtn === index ? "active" : ""
+                    }`}
+                    key={item.value}
+                    onClick={() => setAnswerBtn(index)}
+                  >
+                    {item.value}
+                  </button>
+                ))}
+            </div>
+            <div className="question-footer">
+              <div
+                className="quit-link"
+                onClick={() => {
+                  setQuestionTimer(60);
+                  sessionStorage.removeItem(QUIZ_TIMER);
+                  navigate("/category", { replace: true });
+                }}
+              >
+                Quit
+              </div>
+              <div
+                onClick={() =>
+                  dispatchHelper(
+                    answerBtn,
+                    dispatch,
+                    Number(questionIdx),
+                    questions
+                  )
+                }
+                className={`next-link ${
+                  Number(questionIdx) === questions?.length ? "result" : ""
+                }`}
+              >
+                {Number(questionIdx) === questions?.length ? "Submit" : "Next"}
+              </div>
+            </div>
           </div>
-          <div
-            onClick={() =>
-              dispatchHelper(
-                answerBtn,
-                dispatch,
-                Number(questionIdx),
-                questions
-              )
-            }
-            className={`next-link ${
-              Number(questionIdx) === questions?.length ? "result" : ""
-            }`}
-          >
-            {Number(questionIdx) === questions?.length ? "Submit" : "Next"}
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      )}
+    </>
   );
 };

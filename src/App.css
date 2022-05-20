@@ -7,6 +7,7 @@
 @import url("./pages/Result/result.css");
 @import url("./pages/LeaderBoard/leaderBoard.css");
 @import url("./pages/Dashboard/dashboard.css");
+@import url("./pages/Error/error.css");
 @import url("./components/Navbar/navbar.css");
 @import url("./components/ThemeSwitcher/themeSwitcher.css");
 @import url("./components/Account/account.css");

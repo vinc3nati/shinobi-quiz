@@ -5,6 +5,7 @@ import { useLoader } from "./contexts";
 import {
   Category,
   Dashboard,
+  Error,
   Home,
   LeaderBoard,
   Login,
@@ -71,6 +72,8 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="*" element={<Error title="Error" />} />
+        <Route path="/error" element={<Error title="Error" />} />
       </Routes>
       <ToastContainer style={{ fontWeight: "500", fontSize: "2rem" }} />
       <ScrollTop />
