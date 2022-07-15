@@ -25,7 +25,7 @@
 </p>
 
 <!-- PROJECT SUBTITLE -->
-<h3 align="center">Video Library for Otaku</h3>
+<h3 align="center">Quiz to test your Otaku knowledge</h3>
 
 <p align="center">
   <a href="https://shinobi-quiz.netlify.app/">Website</a>
